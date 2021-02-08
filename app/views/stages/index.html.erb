@@ -1,0 +1,27 @@
+<main>
+  <div class="album py-5 bg-dark">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% @stages.each do |stage| %>
+          <div class="col">
+          <%= link_to stage_path(stage) do %>
+            <div class="card shadow-sm">
+              <img src="<%= stage.image %>">
+              <div class="card-body">
+                <p class="card-text text-dark">作品名:<%= stage.title %></p>
+                <p class="card-text text-dark">劇場名:<%= stage.theater %></p>
+                <p class="card-text text-dark">公演期間:<%= stage.start_day %>〜<%= stage.end_day %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="count">
+                    <small class="text-muted text-dark"><%= stage.group %></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
