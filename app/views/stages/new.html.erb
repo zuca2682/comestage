@@ -1,0 +1,151 @@
+<main class="py-5 bg-dark text-white">
+
+  <div class="col-md-7 col-lg-8 d-block mx-auto mb-4">
+    <h2>公演を掲載する</h2>
+    <p class="lead">あなたの上演する公演の詳細を入力することができます。</p>
+    <p class="lead">ここに入力された情報を元に公演を掲載させていただきます。</p>
+  </div>
+
+  <div class="col-md-7 col-lg-8 d-block mx-auto mb-4">
+    <h4 class="mb-3">掲載内容</h4>
+    <%= form_with(model: @stage, local: true) do |form| %>
+
+      <div class="row g-4">
+        <div class="order-md-last">
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="image" class="form-label">フライヤー:</label>
+            <%= form.text_field :image, placeholder: "公演チラシのURLを貼り付けてください", size: 70 %>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-md-6">
+            <label for="category" class="form-label">カテゴリー:</label>
+            <%= form.text_field :category, placeholder: "ジャンル選択してください。", size: 70 %>
+            <div class="invalid-feedback">
+              ジャンル選択してください。
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="title" class="form-label">作品タイトル:</label>
+            <%= form.text_field :title, placeholder: "タイトルを入力してください。", size: 70 %>
+            <div class="invalid-feedback">
+              公演名を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="group" class="form-label">団体・グループ名:</label>
+            <%= form.text_field :group, placeholder: "団体・グループ名を入力してください。", size: 70 %>
+            <div class="invalid-feedback">
+              団体名を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="time" class="form-label">上演時間:</label>
+            <%= form.text_field :time, placeholder: "上演時間を入力してください。", size: 70 %>
+            <div class="invalid-feedback">
+              上演時間を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="start_day" class="form-label">公演初日:</label>
+            <%= form.date_select :start_day, use_month_numbers: true, size: 70 %>
+            <div class="invalid-feedback">
+              公演初日を選択してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="end_day" class="form-label">公演楽日:</label>
+            <%= form.date_select :end_day, use_month_numbers: true, size: 70 %>
+            <div class="invalid-feedback">
+              公演楽日を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="theater" class="form-label">劇場名(最寄駅名):</label>
+            <%= form.text_field :theater, placeholder: "劇場名(最寄駅名)を入力してください。", size: 70 %>
+            <div class="invalid-feedback">
+              劇場名(最寄駅名)を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="advance_price" class="form-label">前売り券料金:</label>
+            <%= form.text_field :advance_price, placeholder: "前売り券の金額を入力してください。", size: 70 %>
+            <div class="invalid-feedback">
+              前売り券の金額を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="regular_price" class="form-label">当日券料金:</label>
+            <%= form.text_field :regular_price, placeholder: "当日券の金額を入力してください。", size: 70 %>
+            <div class="invalid-feedback">
+              当日券の金額を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="writer" class="form-label">脚本家名:</label>
+            <%= form.text_field :writer, placeholder: "脚本家名を入力してください。", size: 70 %>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="director" class="form-label">演出家名:</label>
+            <%= form.text_field :director, placeholder: "演出家名を入力してください。", size: 70 %>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="cast" class="form-label">出演者名:</label>
+            <%= form.text_area :cast, placeholder: "出演者名を入力してください。", :size => "70x10" %>
+            <div class="invalid-feedback">
+              出演者名を入力してください
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="col-sm-12">
+            <label for="text" class="form-label">その他の情報:</label>
+            <%= form.text_area :text, placeholder: "その他の情報を入力してください。", :size => "70x10" %>
+          </div>
+
+          <hr class="my-4">
+
+          <%= form.submit "公演を掲載する" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>

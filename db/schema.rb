@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_055307) do
 
   create_table "stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
-    t.integer "category", null: false
+    t.string "category", null: false
     t.string "title", null: false
     t.string "group", null: false
     t.string "time", null: false

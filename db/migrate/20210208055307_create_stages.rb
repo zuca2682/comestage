@@ -2,7 +2,7 @@ class CreateStages < ActiveRecord::Migration[6.0]
   def change
     create_table :stages do |t|
       t.text :image
-      t.integer :category,     null: false
+      t.string :category,      null: false
       t.string :title,         null: false
       t.string :group,         null: false
       t.string :time,          null: false
